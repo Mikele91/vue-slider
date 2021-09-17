@@ -22,6 +22,8 @@
                 <div class="imgs-conteiner">
                     <img  :src="imgs[imgIndex]" alt="">
                     <div class="conteiner_circle">
+                        <!-- Per mettere utilizzare la funzione ternaria bisogna usare virgolette per inserire la classe altrimenti non va -->
+                        <i class="fas fa-circle" v-for="(img, i) in imgs" :class="imgIndex == i ? 'selColor' : '' " @click ="select()"></i>
 
                     </div>
                 </div>

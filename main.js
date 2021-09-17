@@ -25,10 +25,14 @@ const app = new Vue({
                 this.imgIndex = this.imgs.length-1;
             }
 
+        },
+        select: function(){
+            this.imgIndex == i ;
+
         }
     },
     mounted: function() {
-        let timing =setInterval(function(){ this.imgIndex++; }, 3000);
+        let timing =setInterval(function(){ this.imgIndex++; }, 1000);
     }
         
 })
