@@ -13,11 +13,18 @@ const app = new Vue({
     },
     methods:{
         nextImg: function(){
+
             this.imgIndex++;
             if( this.imgIndex >= this.imgs.length){
                 this.imgIndex = 0;
             }
             
+        },
+        // time:function(){
+        //     intervallo = setInterval(()=>this.nextImg() , 1000);
+        // }, 
+        stop: function() {
+            clearInterval(intervallo);
         },
         prevImg: function(){
             this.imgIndex--;
@@ -26,13 +33,14 @@ const app = new Vue({
             }
 
         },
-        select: function(){
-            this.imgIndex == i ;
+        select: function(i){
+            this.imgIndex = i ;
 
         }
     },
     mounted: function() {
-        let timing =setInterval(function(){ this.imgIndex++; }, 1000);
-    }
+        intervallo = setInterval(()=>this.nextImg() , 1000);
+    },
+    
         
 })
